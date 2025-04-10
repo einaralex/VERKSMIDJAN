@@ -27,69 +27,89 @@
   }
 }
 
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 150px;
+  background-color: rgb(31, 41, 55);
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  height: 100vh;
+}
+
+.sidebarTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.sidebarNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarNavItem {
+  margin-bottom: 0.5rem;
+}
+
 .main {
+  flex: 1;
+  padding: 2rem;
+  background-color: rgb(243, 244, 246);
+  margin-left: 150px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.rowsContainer {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  gap: 1rem;
+  height: 100%;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+.row {
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  overflow: hidden;
   cursor: pointer;
+  flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.rowExpanded {
+  flex: 3;
+}
+
+.rowCollapsed {
+  flex: 1;
+}
+
+.rowContent {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.rowTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
+.rowText {
+  color: rgb(75, 85, 99);
 }
 
 .footer {
