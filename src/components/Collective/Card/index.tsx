@@ -35,8 +35,11 @@ export default function CollectiveCard({
 }) {
   return (
     <div className={styles.card}>
-      <h3>{member.name}</h3>
-      <p className={styles.aka}>a.k.a. {member.aka}</p>
+      <div>
+        <h3>{member.name}</h3>
+        <p className={styles.aka}>a.k.a. {member.aka}</p>
+      </div>
+
       <div className={styles.socialLinks}>
         <SocialLink url={member.instagram} type="instagram" />
         <SocialLink url={member.soundcloud} type="soundcloud" />
