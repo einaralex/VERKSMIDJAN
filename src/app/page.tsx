@@ -10,6 +10,7 @@ import {
 } from "@/components/Collective";
 import { SocialCollapsed } from "@/components/Social";
 import { SocialExpanded } from "@/components/Social";
+import { MusicCollapsed, MusicExpanded } from "@/components/Music";
 
 interface RowProps {
   collapsedContent: ReactNode;
@@ -34,13 +35,16 @@ const Row = ({
       onClick={onExpand}
     >
       <div className={styles.rowContent}>
-        {isExpanded ? (
-          <div ref={contentRef} className={styles.expandedContent}>
-            {expandedContent}
-          </div>
-        ) : (
-          collapsedContent
-        )}
+        <div
+          ref={contentRef}
+          className={styles.expandedContent}
+          style={{ display: isExpanded ? "block" : "none" }}
+        >
+          {expandedContent}
+        </div>
+        <div style={{ display: isExpanded ? "none" : "block" }}>
+          {collapsedContent}
+        </div>
       </div>
     </div>
   );
@@ -52,25 +56,9 @@ export default function Home() {
   const isScrolling = useRef(false);
   const scrollThreshold = useRef(0);
 
-  const rows = [
-    {
-      collapsedContent: <HeaderCollapsed />,
-      expandedContent: <HeaderExpanded />,
-    },
-    {
-      collapsedContent: <CollectiveCollapsed />,
-      expandedContent: <CollectiveExpanded />,
-    },
-    {
-      collapsedContent: <SocialCollapsed />,
-      expandedContent: <SocialExpanded />,
-    },
-  ];
-
+  const ROWS = 4;
   // Update refs array when rows change
-  useEffect(() => {
-    contentRefs.current = contentRefs.current.slice(0, rows.length);
-  }, [rows.length]);
+  contentRefs.current = contentRefs.current.slice(0, ROWS);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
@@ -100,7 +88,7 @@ export default function Home() {
           // Only move down if we've scrolled enough
           if (scrollThreshold.current >= SCROLL_THRESHOLD) {
             // Move to next row
-            const nextRow = Math.min(expandedRow + 1, rows.length - 1);
+            const nextRow = Math.min(expandedRow + 1, ROWS - 1);
             if (nextRow !== expandedRow) {
               setExpandedRow(nextRow);
               // Reset scroll position of new content
@@ -155,26 +143,42 @@ export default function Home() {
     return () => {
       window.removeEventListener("wheel", handleWheel);
     };
-  }, [expandedRow, rows.length]);
+  }, [expandedRow]);
 
   return (
     <div className={styles.container}>
-      {/* Slim Sidebar */}
       <Sidebar />
 
-      {/* Main Content */}
       <main className={styles.main}>
         <div className={styles.rowsContainer}>
-          {rows.map((row, index) => (
-            <Row
-              key={index}
-              collapsedContent={row.collapsedContent}
-              expandedContent={row.expandedContent}
-              isExpanded={expandedRow === index}
-              onExpand={() => setExpandedRow(index)}
-              contentRef={(el) => (contentRefs.current[index] = el)}
-            />
-          ))}
+          <Row
+            isExpanded={expandedRow === 0}
+            onExpand={() => setExpandedRow(0)}
+            expandedContent={<HeaderExpanded />}
+            collapsedContent={<HeaderCollapsed />}
+            contentRef={(el) => (contentRefs.current[0] = el)}
+          />
+          <Row
+            isExpanded={expandedRow === 1}
+            onExpand={() => setExpandedRow(1)}
+            expandedContent={<CollectiveExpanded />}
+            collapsedContent={<CollectiveCollapsed />}
+            contentRef={(el) => (contentRefs.current[1] = el)}
+          />
+          <Row
+            isExpanded={expandedRow === 2}
+            onExpand={() => setExpandedRow(2)}
+            expandedContent={<SocialExpanded />}
+            collapsedContent={<SocialCollapsed />}
+            contentRef={(el) => (contentRefs.current[2] = el)}
+          />
+          <Row
+            isExpanded={expandedRow === 3}
+            onExpand={() => setExpandedRow(3)}
+            expandedContent={<MusicExpanded />}
+            collapsedContent={<MusicCollapsed />}
+            contentRef={(el) => (contentRefs.current[3] = el)}
+          />
         </div>
       </main>
     </div>
