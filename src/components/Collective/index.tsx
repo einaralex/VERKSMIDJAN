@@ -23,7 +23,14 @@ const members = [
     ra: "",
   },
   {
-    name: "Inga",
+    name: "Haraldur",
+    aka: "Útiköttur",
+    instagram: "https://www.instagram.com/utikottur/",
+    soundcloud: "https://soundcloud.com/ravtonlist",
+    ra: "",
+  },
+  {
+    name: "Ingveldur",
     aka: "Innikisa",
     instagram: "",
     soundcloud: "",
