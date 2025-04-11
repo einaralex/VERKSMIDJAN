@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, ReactNode } from "react";
+import { useState, useRef, ReactNode, useEffect } from "react";
 import styles from "./page.module.css";
 import Sidebar from "@/components/Sidebar";
 import { HeaderCollapsed, HeaderExpanded } from "@/components/Header";
@@ -51,16 +51,8 @@ export default function Home() {
 
   const rows = [
     {
-      collapsedContent: (
-        <RowWrap>
-          <HeaderCollapsed />
-        </RowWrap>
-      ),
-      expandedContent: (
-        <RowWrap>
-          <HeaderExpanded />
-        </RowWrap>
-      ),
+      collapsedContent: <HeaderCollapsed />,
+      expandedContent: <HeaderExpanded />,
     },
     {
       collapsedContent: <h2 className={styles.rowTitle}>Row 2</h2>,
