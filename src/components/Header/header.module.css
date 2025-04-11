@@ -22,3 +22,11 @@
   padding-top: 14px;
   color: #333;
 }
+
+@media (max-width: 500px) {
+  .logo {
+    max-width: 180px;
+  }
+  
+
+}

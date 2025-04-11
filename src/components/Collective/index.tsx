@@ -1,25 +1,46 @@
 import CollapsedWrap from "../Rows/CollapsedWrap";
 import ExpandedWrap from "../Rows/ExpandedWrap";
+import Card from "./Card";
 import styles from "./collective.module.css";
-import Image from "next/image";
+
 export function CollectiveCollapsed() {
   return <CollapsedWrap>Collective</CollapsedWrap>;
 }
+
+const members = [
+  {
+    name: "Einar",
+    aka: "Funktion Einar, Þrumuthrustur",
+    instagram: "https://www.instagram.com/einar.aiff/",
+    soundcloud: "https://soundcloud.com/funktioneinar",
+    ra: "https://ra.co/dj/funktioneinar",
+  },
+  {
+    name: "Guido",
+    aka: "2 Peace",
+    instagram: "https://www.instagram.com/2peacewav/",
+    soundcloud: "https://soundcloud.com/2peacewav",
+    ra: "",
+  },
+  {
+    name: "Sara",
+    aka: "Keisara",
+    instagram: "https://www.instagram.com/stories/keisaramargret/",
+    soundcloud: "https://soundcloud.com/kei_sara",
+    ra: "https://ra.co/dj/keisara",
+  },
+];
 
 export function CollectiveExpanded() {
   return (
     <>
       <CollectiveCollapsed />
       <ExpandedWrap>
-        <p>Grjót hörð tónlist og góð skemmtun.</p>
-        <Image
-          className={styles.logo}
-          src="/verksmidjan-font-black-transparent.png"
-          alt="Next.js logo"
-          width={250}
-          height={200}
-          priority
-        />
+        <div className={styles.grid}>
+          {members.map((member) => (
+            <Card key={member.name} member={member} />
+          ))}
+        </div>
       </ExpandedWrap>
     </>
   );

@@ -22,6 +22,14 @@
     justify-content: space-between;
 }
 
+.sidebarLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 12px;
+}
+/* 
 .sidebarTitle {
     font-size: 1.25rem;
     font-weight: bold;
@@ -36,7 +44,7 @@
 
 .sidebarNavItem {
     margin-bottom: 0.5rem;
-}
+} */
 .cogwheelsContainer {
     position: relative;
     height: 80px;

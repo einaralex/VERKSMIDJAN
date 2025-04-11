@@ -4,44 +4,74 @@
     bottom: 0;
     left: 0;
     transform: translateX(-50%);
+    
+    
   }
+
+
   
   /*Rotate cogs*/
 
-  svg .paused {
-    animation-play-state: paused;
-  }
+
   
-  svg .cogTop {
+  
+  svg .top {
     transform-origin: 127px 101px;
-    animation: spin 10s linear infinite;
-    animation-delay: 0.1s;
-    
-  }
-  
-  svg .cogMid {
-    transform-origin: 82px 269px;
-    animation: spin-reverse 10s linear infinite;
-    animation-delay: 0.1s;
-    
-  }
-  
-  svg .cogBottom {
-    transform-origin: 202px 390px;
-    animation: spin 10s linear infinite;
     animation-delay: 0.11s;
     
   }
   
-  svg .paused {
-    animation-play-state: paused;
-
-  }
-
-  svg .play {
-    animation-play-state: running;
+  svg .middle {
+    transform-origin: 82px 269px;
+    animation-delay: 0.1s;
+    
   }
   
+  svg .bottom {
+    transform-origin: 202px 390px;
+    animation-delay: 0.11s;
+    
+    
+  }
+  
+  svg.paused .top,
+  svg.paused .middle,
+  svg.paused .bottom {
+    animation-play-state: paused;
+    
+
+  }
+
+  svg.play .top,
+  svg.play .middle,
+  svg.play .bottom {
+      animation-play-state: running;
+    
+  }
+  
+  .down {
+    .top {
+      animation: spin 10s linear infinite;
+    }
+    .middle {
+      animation: spin-reverse 10s linear infinite;
+    }
+    .bottom {
+      animation: spin 10s linear infinite;
+    }
+  }
+
+  .up {
+    .top {
+      animation: spin-reverse 10s linear infinite;
+    }
+    .middle {
+      animation: spin 10s linear infinite;
+    }
+    .bottom {
+      animation: spin-reverse 10s linear infinite;
+    }
+  }
   @keyframes spin {
     100% {
       -moz-transform: rotate(360deg);

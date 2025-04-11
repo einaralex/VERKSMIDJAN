@@ -22,3 +22,20 @@
   padding-top: 14px;
   color: #333;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Each column is at least 200px */
+  gap: 1rem;
+  row-gap: 2rem;
+  box-sizing: border-box;
+  /* border-top: 2px solid black; */
+  /* border-left: 2px solid black; */
+
+  > div {
+    box-sizing: border-box;
+    border: 2px solid black;
+    /* border-bottom: 2px solid black; */
+    /* border-right: 2px solid black; */
+  }
+}
