@@ -1,0 +1,13 @@
+.collapsedWrap {
+    padding: 1rem;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.expandedWrap {
+    padding: 1rem;
+    color: #333;
+    font-size: 1rem;
+}

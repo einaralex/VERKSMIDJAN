@@ -4,6 +4,12 @@ import { useState, useRef, ReactNode, useEffect } from "react";
 import styles from "./page.module.css";
 import Sidebar from "@/components/Sidebar";
 import { HeaderCollapsed, HeaderExpanded } from "@/components/Header";
+import {
+  CollectiveCollapsed,
+  CollectiveExpanded,
+} from "@/components/Collective";
+import { SocialCollapsed } from "@/components/Social";
+import { SocialExpanded } from "@/components/Social";
 
 interface RowProps {
   collapsedContent: ReactNode;
@@ -40,9 +46,6 @@ const Row = ({
   );
 };
 
-const RowWrap = ({ children }: { children: ReactNode }) => {
-  return <div className={styles.rowWrap}>{children}</div>;
-};
 export default function Home() {
   const [expandedRow, setExpandedRow] = useState<number>(0);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -55,73 +58,12 @@ export default function Home() {
       expandedContent: <HeaderExpanded />,
     },
     {
-      collapsedContent: <h2 className={styles.rowTitle}>Row 2</h2>,
-      expandedContent: (
-        <>
-          <h2 className={styles.rowTitle}>Row 2</h2>
-          <div className={styles.contentSection}>
-            <p>Just this</p>
-          </div>
-        </>
-      ),
+      collapsedContent: <CollectiveCollapsed />,
+      expandedContent: <CollectiveExpanded />,
     },
     {
-      collapsedContent: <h2 className={styles.rowTitle}>Row 3</h2>,
-      expandedContent: (
-        <>
-          <h2 className={styles.rowTitle}>Row 3</h2>
-          <div className={styles.contentSection}>
-            <p className={styles.rowText}>
-              This is the content for row 3. It will expand when scrolled into
-              view.
-            </p>
-            <p className={styles.rowText}>
-              Additional content for row 3. This section should be scrollable.
-            </p>
-            <p className={styles.rowText}>
-              More content to demonstrate scrolling behavior.
-            </p>
-            <p className={styles.rowText}>
-              Even more content to ensure scrolling is working.
-            </p>
-            <p className={styles.rowText}>
-              Keep adding content to test the scroll behavior.
-            </p>
-            <p className={styles.rowText}>
-              This should be enough content to make the container scrollable.
-            </p>
-          </div>
-        </>
-      ),
-    },
-    {
-      collapsedContent: <h2 className={styles.rowTitle}>Row 4</h2>,
-      expandedContent: (
-        <>
-          <h2 className={styles.rowTitle}>Row 4</h2>
-          <div className={styles.contentSection}>
-            <p className={styles.rowText}>
-              This is the content for row 4. It will expand when scrolled into
-              view.
-            </p>
-            <p className={styles.rowText}>
-              Additional content for row 4. This section should be scrollable.
-            </p>
-            <p className={styles.rowText}>
-              More content to demonstrate scrolling behavior.
-            </p>
-            <p className={styles.rowText}>
-              Even more content to ensure scrolling is working.
-            </p>
-            <p className={styles.rowText}>
-              Keep adding content to test the scroll behavior.
-            </p>
-            <p className={styles.rowText}>
-              This should be enough content to make the container scrollable.
-            </p>
-          </div>
-        </>
-      ),
+      collapsedContent: <SocialCollapsed />,
+      expandedContent: <SocialExpanded />,
     },
   ];
 

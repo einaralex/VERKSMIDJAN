@@ -94,6 +94,7 @@
 .expandedContent {
   flex: 1;
   overflow-y: auto;
+  cursor: ns-resize;
   /* padding: 1rem; */
   -webkit-overflow-scrolling: touch;
 }

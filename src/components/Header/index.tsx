@@ -19,9 +19,9 @@ export function HeaderExpanded() {
   return (
     <>
       <HeaderCollapsed />
-      {/* <div className={styles.content}>
-        <h1 className={styles.headerTitle}>Content</h1>
-      </div> */}
+      <div className={styles.content}>
+        <p>Grjót hörð tónlist og góð skemmtun.</p>
+      </div>
     </>
   );
 }

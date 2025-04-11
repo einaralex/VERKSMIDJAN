@@ -1,0 +1,43 @@
+  /* Wrap the SVG in a div */
+.cogwheels {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-50%);
+  }
+  
+  /*Rotate cogs*/
+  
+  svg .cogTop {
+    transform-origin: 127px 101px;
+    animation: spin 10s linear infinite;
+    animation-delay: 0.11s;
+  }
+  
+  svg .cogMid {
+    transform-origin: 82px 269px;
+    animation: spin-reverse 10s linear infinite;
+    animation-delay: 0.95s;
+  }
+  
+  svg .cogBottom {
+    transform-origin: 202px 390px;
+    animation: spin 10s linear infinite;
+    animation-delay: 0.11s;
+  }
+  
+  @keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin-reverse {
+    100% {
+      -moz-transform: rotate(-360deg);
+      -webkit-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+    }
+  }
