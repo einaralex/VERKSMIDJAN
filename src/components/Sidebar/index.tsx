@@ -14,7 +14,6 @@ export default function Sidebar() {
         <div className={styles.cogwheelsContainer}>
           <div className={styles.cogwheels}>
             <Cogwheels />
-            {/* <p>B</p> */}
           </div>
         </div>
       </div>

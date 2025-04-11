@@ -148,7 +148,7 @@ export default function Home() {
       // Reset scrolling flag after a short delay
       setTimeout(() => {
         isScrolling.current = false;
-      }, 50);
+      }, SCROLL_THRESHOLD);
     };
 
     window.addEventListener("wheel", handleWheel, { passive: false });

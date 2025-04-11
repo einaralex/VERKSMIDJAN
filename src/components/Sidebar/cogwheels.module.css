@@ -7,23 +7,39 @@
   }
   
   /*Rotate cogs*/
+
+  svg .paused {
+    animation-play-state: paused;
+  }
   
   svg .cogTop {
     transform-origin: 127px 101px;
     animation: spin 10s linear infinite;
-    animation-delay: 0.11s;
+    animation-delay: 0.1s;
+    
   }
   
   svg .cogMid {
     transform-origin: 82px 269px;
     animation: spin-reverse 10s linear infinite;
-    animation-delay: 0.95s;
+    animation-delay: 0.1s;
+    
   }
   
   svg .cogBottom {
     transform-origin: 202px 390px;
     animation: spin 10s linear infinite;
     animation-delay: 0.11s;
+    
+  }
+  
+  svg .paused {
+    animation-play-state: paused;
+
+  }
+
+  svg .play {
+    animation-play-state: running;
   }
   
   @keyframes spin {
