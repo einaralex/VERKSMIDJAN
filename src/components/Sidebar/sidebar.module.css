@@ -1,0 +1,31 @@
+.sidebar {
+    width: 60px;
+    color: black;
+    padding: 1rem;
+    position: fixed;
+    height: 100vh;
+    /* background-color: gray; */
+    /* background-image: url("https://www.transparenttextures.com/patterns/black-felt.png"); */
+
+    border: 2px solid black;
+    /* background-image: url("https://www.transparenttextures.com/patterns/black-felt.png"); */
+    
+    /* border-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png") 8 round; */
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  }
+  
+  .sidebarTitle {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebarNav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebarNavItem {
+    margin-bottom: 0.5rem;
+  }

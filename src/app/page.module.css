@@ -14,6 +14,7 @@
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +25,7 @@
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
+    
   }
 }
 
@@ -31,54 +33,33 @@
   display: flex;
   height: 100vh;
   overflow: hidden;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),url("https://www.transparenttextures.com/patterns/black-felt.png"); */
+  /* background-image: url("https://www.transparenttextures.com/patterns/black-felt.png"); */
+  background-color: white;
+  border: 2px solid black;
+    
 }
 
-.sidebar {
-  width: 150px;
-  background-color: rgb(31, 41, 55);
-  color: white;
-  padding: 1rem;
-  position: fixed;
-  height: 100vh;
-}
 
-.sidebarTitle {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.sidebarNav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebarNavItem {
-  margin-bottom: 0.5rem;
-}
 
 .main {
   flex: 1;
-  padding: 2rem;
-  background-color: rgb(243, 244, 246);
-  margin-left: 150px;
+  margin-left: 60px;
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden;    
 }
 
 .rowsContainer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   height: 100%;
   overflow: hidden;
 }
 
 .row {
   transition: all 0.3s ease;
-  background-color: white;
-  border-radius: 0.5rem;
+  /* background-color: white; */
+  border: 2px solid black;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   overflow: hidden;
   cursor: pointer;
@@ -90,6 +71,10 @@
   flex: 0 0 60px;
 }
 
+.rowWrap {
+  min-height: 60px;
+  padding: 1rem;
+}
 .rowExpanded {
   flex: 1;
   min-height: 0;
@@ -105,7 +90,7 @@
 .expandedContent {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem;
+  /* padding: 1rem; */
   -webkit-overflow-scrolling: touch;
 }
 

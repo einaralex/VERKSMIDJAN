@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef, ReactNode } from "react";
 import styles from "./page.module.css";
+import Sidebar from "@/components/Sidebar";
+import { HeaderCollapsed, HeaderExpanded } from "@/components/Header";
 
 interface RowProps {
   collapsedContent: ReactNode;
@@ -38,6 +40,9 @@ const Row = ({
   );
 };
 
+const RowWrap = ({ children }: { children: ReactNode }) => {
+  return <div className={styles.rowWrap}>{children}</div>;
+};
 export default function Home() {
   const [expandedRow, setExpandedRow] = useState<number>(0);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -46,17 +51,15 @@ export default function Home() {
 
   const rows = [
     {
-      collapsedContent: <h2 className={styles.rowTitle}>Row 1</h2>,
+      collapsedContent: (
+        <RowWrap>
+          <HeaderCollapsed />
+        </RowWrap>
+      ),
       expandedContent: (
-        <>
-          <h2 className={styles.rowTitle}>Row 1</h2>
-          <div className={styles.contentSection}>
-            <p className={styles.rowText}>
-              This is the content for row 1. It will expand when scrolled into
-              view.
-            </p>
-          </div>
-        </>
+        <RowWrap>
+          <HeaderExpanded />
+        </RowWrap>
       ),
     },
     {
@@ -223,16 +226,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* Slim Sidebar */}
-      <div className={styles.sidebar}>
-        <h1 className={styles.sidebarTitle}>Sidebar</h1>
-        <nav>
-          <ul className={styles.sidebarNav}>
-            <li className={styles.sidebarNavItem}>Link 1</li>
-            <li className={styles.sidebarNavItem}>Link 2</li>
-            <li className={styles.sidebarNavItem}>Link 3</li>
-          </ul>
-        </nav>
-      </div>
+      <Sidebar />
 
       {/* Main Content */}
       <main className={styles.main}>
