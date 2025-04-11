@@ -23,6 +23,13 @@ const members = [
     ra: "",
   },
   {
+    name: "Inga",
+    aka: "Innikisa",
+    instagram: "",
+    soundcloud: "",
+    ra: "",
+  },
+  {
     name: "Sara",
     aka: "Keisara",
     instagram: "https://www.instagram.com/stories/keisaramargret/",

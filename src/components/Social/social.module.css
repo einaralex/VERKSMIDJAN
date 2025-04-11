@@ -34,7 +34,6 @@
     box-sizing: border-box;
     border-radius: 4px;
     color: #fff;
-    /* border: 2px solid black; */
     background-color: #000;
     display: flex;
     flex-direction: column;
@@ -45,7 +44,7 @@
 @media (max-width: 500px) {
   .grid {
     /* Add your styles here */
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Each column is at least 200px */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Each column is at least 200px */
     > a {
       font-size: 0.8rem;
     }
