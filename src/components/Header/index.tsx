@@ -18,9 +18,16 @@ export function HeaderCollapsed() {
 export function HeaderExpanded() {
   return (
     <>
-      <HeaderCollapsed />
+      {/* <HeaderCollapsed /> */}
       <div className={styles.content}>
-        <p>Grjót hörð tónlist og góð skemmtun.</p>
+        <Image
+          className={styles.visual}
+          src={"/verksmidjan-visual.gif"}
+          alt="Grjót hörð tónlist og góð skemmtun."
+          fill
+          style={{ objectFit: "cover" }}
+          priority
+        />
       </div>
     </>
   );
