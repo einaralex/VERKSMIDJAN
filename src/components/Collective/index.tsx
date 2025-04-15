@@ -44,7 +44,7 @@ const members = [
     ra: "https://ra.co/dj/keisara",
   },
   {
-    name: "Sveinn",
+    name: "Sveinn Helgi",
     aka: "SHH!",
     instagram: "https://www.instagram.com/1sv1nn/",
     soundcloud: "",
