@@ -43,6 +43,13 @@ const members = [
     soundcloud: "https://soundcloud.com/kei_sara",
     ra: "https://ra.co/dj/keisara",
   },
+  {
+    name: "Sveinn",
+    aka: "SHH!",
+    instagram: "https://www.instagram.com/1sv1nn/",
+    soundcloud: "",
+    ra: "",
+  },
 ];
 
 export function CollectiveExpanded() {

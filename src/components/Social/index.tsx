@@ -9,7 +9,7 @@ export function SocialCollapsed() {
 const socials = [
   {
     id: "telegram",
-    title: "Telegram",
+    title: "Group Chat",
     url: "https://t.me/verksmidjan",
   },
   {
