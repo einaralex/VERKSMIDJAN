@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, ReactNode, useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import styles from "./page.module.css";
 import Sidebar from "@/components/Sidebar";
 import { HeaderCollapsed, HeaderExpanded } from "@/components/Header";
