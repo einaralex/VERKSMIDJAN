@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, ReactNode, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import Sidebar from "@/components/Sidebar";
 import { HeaderCollapsed, HeaderExpanded } from "@/components/Header";
@@ -57,7 +58,26 @@ export default function Home() {
   const isScrolling = useRef(false);
   const scrollThreshold = useRef(0);
 
-  const ROWS = 4;
+  const pathname = usePathname();
+
+  const ROWS = 5;
+
+  // Map routes to row indices
+  const routeToRowMap: Record<string, number> = {
+    "/releases": 2,
+    "/socials": 3,
+    "/music": 4,
+    "/collective": 1,
+  };
+
+  // Set expanded row based on pathname on mount
+  useEffect(() => {
+    const rowIndex = routeToRowMap[pathname];
+    if (rowIndex !== undefined) {
+      setExpandedRow(rowIndex);
+    }
+  }, [pathname]);
+
   // Update refs array when rows change
   contentRefs.current = contentRefs.current.slice(0, ROWS);
 
@@ -180,7 +200,6 @@ export default function Home() {
             collapsedContent={<SocialCollapsed />}
             contentRef={(el) => (contentRefs.current[3] = el)}
           />
-
           <Row
             isExpanded={expandedRow === 4}
             onExpand={() => setExpandedRow(4)}
