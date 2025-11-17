@@ -11,6 +11,7 @@ import {
 import { SocialCollapsed } from "@/components/Social";
 import { SocialExpanded } from "@/components/Social";
 import { MusicCollapsed, MusicExpanded } from "@/components/Music";
+import { ReleasesCollapsed, ReleasesExpanded } from "@/components/Releases";
 
 interface RowProps {
   collapsedContent: ReactNode;
@@ -168,16 +169,24 @@ export default function Home() {
           <Row
             isExpanded={expandedRow === 2}
             onExpand={() => setExpandedRow(2)}
-            expandedContent={<SocialExpanded />}
-            collapsedContent={<SocialCollapsed />}
+            expandedContent={<ReleasesExpanded />}
+            collapsedContent={<ReleasesCollapsed />}
             contentRef={(el) => (contentRefs.current[2] = el)}
           />
           <Row
             isExpanded={expandedRow === 3}
             onExpand={() => setExpandedRow(3)}
+            expandedContent={<SocialExpanded />}
+            collapsedContent={<SocialCollapsed />}
+            contentRef={(el) => (contentRefs.current[3] = el)}
+          />
+
+          <Row
+            isExpanded={expandedRow === 4}
+            onExpand={() => setExpandedRow(4)}
             expandedContent={<MusicExpanded />}
             collapsedContent={<MusicCollapsed />}
-            contentRef={(el) => (contentRefs.current[3] = el)}
+            contentRef={(el) => (contentRefs.current[4] = el)}
           />
         </div>
       </main>

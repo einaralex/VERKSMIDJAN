@@ -18,6 +18,11 @@ const socials = [
     url: "https://www.instagram.com/rave.rvk/",
   },
   {
+    id: "bandcamp",
+    title: "Bandcamp",
+    url: "https://verk.bandcamp.com/",
+  },
+  {
     id: "soundcloud",
     title: "SoundCloud",
     url: "https://soundcloud.com/verksmidjan",

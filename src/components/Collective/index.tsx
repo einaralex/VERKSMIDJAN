@@ -10,7 +10,7 @@ export function CollectiveCollapsed() {
 const members = [
   {
     name: "Einar",
-    aka: "Funktion Einar, Þrumuthrustur",
+    aka: "Funktion Einar",
     instagram: "https://www.instagram.com/einar.aiff/",
     soundcloud: "https://soundcloud.com/funktioneinar",
     ra: "https://ra.co/dj/funktioneinar",

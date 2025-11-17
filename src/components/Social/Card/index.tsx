@@ -11,7 +11,7 @@ export function SocialCard({
   };
 }) {
   return (
-    <a href={social.url} className={styles.card}>
+    <a href={social.url} target="_blank" className={styles.card}>
       <h3>{social.title}</h3>
       <div className={styles.logoWrapper}>
         <Image
