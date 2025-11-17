@@ -1,0 +1,16 @@
+.streamButtons {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.streamButtons button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFF;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
