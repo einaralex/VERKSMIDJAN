@@ -1,7 +1,10 @@
 .streamButtons {
   display: flex;
   gap: 1rem;
-  flex-direction: column;
+  flex-direction: row;
+  width: 600px;
+  justify-content: space-between;
+
 }
 .streamButtons button {
   display: flex;
@@ -13,4 +16,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  min-width: 135px;
+  justify-content: center;
 }
+
