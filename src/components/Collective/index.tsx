@@ -33,7 +33,7 @@ const members = [
     name: "Ingveldur",
     aka: "Innikisa",
     instagram: "",
-    soundcloud: "",
+    soundcloud: "https://soundcloud.com/innikisa",
     ra: "",
   },
   {
