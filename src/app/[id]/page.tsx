@@ -92,7 +92,7 @@ export default async function ReleasePage({
 
   return (
     <div className={styles.page}>
-      <Link href="/" className={styles.backLink}>
+      <Link href="/releases" className={styles.backLink}>
         ← Back
       </Link>
 
