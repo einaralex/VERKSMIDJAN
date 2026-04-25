@@ -30,7 +30,7 @@ export function ThanksCard({
 }: {
   thanks: {
     who: string;
-    for: string;
+    for?: string;
     url: string;
   };
 }) {

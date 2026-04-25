@@ -1,6 +1,6 @@
 import CollapsedWrap from "../Rows/CollapsedWrap";
 import ExpandedWrap from "../Rows/ExpandedWrap";
-import { ThanksCard, SocialCard } from "./Card";
+import { SocialCard, ThanksCard } from "./Card";
 import styles from "./social.module.css";
 export function SocialCollapsed() {
   return <CollapsedWrap>Socials</CollapsedWrap>;
@@ -13,11 +13,6 @@ const socials = [
   //   url: "https://t.me/verksmidjan",
   // },
   {
-    id: "instagram",
-    title: "Instagram",
-    url: "https://www.instagram.com/rave.rvk/",
-  },
-  {
     id: "bandcamp",
     title: "Bandcamp",
     url: "https://verk.bandcamp.com/",
@@ -26,6 +21,11 @@ const socials = [
     id: "soundcloud",
     title: "SoundCloud",
     url: "https://soundcloud.com/verksmidjan",
+  },
+  {
+    id: "instagram",
+    title: "Instagram",
+    url: "https://www.instagram.com/rave.rvk/",
   },
   {
     id: "ra",
@@ -46,6 +46,11 @@ const socials = [
 
 const specialThanks = [
   {
+    who: "Gallerý Geimskip",
+    for: "Vinyls",
+    url: "https://www.facebook.com/gallerygeimskip",
+  },
+  {
     who: "Fokoff_",
     for: "Graphic Design",
     url: "https://www.instagram.com/fokoff_/",
@@ -54,6 +59,13 @@ const specialThanks = [
     who: "Raggivald",
     for: "Visuals",
     url: "https://www.instagram.com/raggivald/",
+  },
+];
+const checkout = [
+  {
+    who: "Cocoon",
+    for: "Art",
+    url: "https://cocoon.art",
   },
 ];
 
@@ -71,6 +83,12 @@ export function SocialExpanded() {
         <div className={styles.grid}>
           {specialThanks.map((thanks) => (
             <ThanksCard key={thanks.who} thanks={thanks} />
+          ))}
+        </div>
+        <h2 className={styles.specialThanks}>Check Out</h2>
+        <div className={styles.grid}>
+          {checkout.map((co) => (
+            <ThanksCard key={co.who} thanks={co} />
           ))}
         </div>
       </ExpandedWrap>

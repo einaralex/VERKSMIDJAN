@@ -1,18 +1,26 @@
 import releases from "@/components/Releases/data.json";
+import redirects from "@/data/redirects.json";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import RedirectClient from "./RedirectClient";
 import styles from "./release.module.css";
 
 function findRelease(id: string) {
   return releases.find((r) => r.id === id || r.slugs.includes(id));
 }
 
+function findRedirect(id: string) {
+  return redirects.find((r) => r.slug === id);
+}
+
 export function generateStaticParams() {
-  return releases.flatMap((release) => [
+  const releaseParams = releases.flatMap((release) => [
     { id: release.id },
     ...release.slugs.map((slug) => ({ id: slug })),
   ]);
+  const redirectParams = redirects.map((r) => ({ id: r.slug }));
+  return [...releaseParams, ...redirectParams];
 }
 
 export function generateMetadata({
@@ -21,6 +29,13 @@ export function generateMetadata({
   params: Promise<{ id: string }>;
 }) {
   return params.then(({ id }) => {
+    const ext = findRedirect(id);
+    if (ext) {
+      return {
+        title: "Redirecting...",
+        other: { "http-equiv": "refresh", content: `0;url=${ext.url}` },
+      };
+    }
     const release = findRelease(id);
     if (!release) return { title: "Release Not Found" };
     return {
@@ -59,6 +74,12 @@ export default async function ReleasePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+
+  const ext = findRedirect(id);
+  if (ext) {
+    return <RedirectClient url={ext.url} />;
+  }
+
   const release = findRelease(id);
 
   if (!release) {
