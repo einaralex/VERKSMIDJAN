@@ -12,16 +12,15 @@ export function SocialCard({
 }) {
   return (
     <a href={social.url} target="_blank" className={styles.card}>
-      <h3>{social.title}</h3>
-      <div className={styles.logoWrapper}>
-        <Image
-          src={`/icons/${social.id}-white.png`}
-          alt={social.title}
-          width={24}
-          height={24}
-          style={{ objectFit: "contain" }}
-        />
-      </div>
+      <Image
+        src={`/icons/${social.id}-white.png`}
+        alt={social.title}
+        width={24}
+        height={24}
+        style={{ objectFit: "contain" }}
+      />
+      <h3 className={styles.title}>{social.title}</h3>
+      <div className={styles.logoWrapper}></div>
     </a>
   );
 }

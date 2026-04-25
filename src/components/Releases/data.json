@@ -1,0 +1,99 @@
+[
+  {
+    "id": "VERK0001",
+    "artist": "Útiköttur",
+    "album": "Gæðablóð og Bestaskinn",
+    "release": "2025-10-02",
+    "year": "2025",
+    "slugs": ["utikottur"],
+    "cover": "/covers/VERK0001.jpg",
+    "bandcampAlbumId": "3132847855",
+    "links": {
+      "bandcamp": "https://utikottur.bandcamp.com/album/g-abl-bestaskinn",
+      "apple": "https://music.apple.com/us/artist/utik%C3%B6ttur/1853193367",
+      "spotify": "https://open.spotify.com/album/6ZrD39qY2mRnLGjzWM3vus?si=69957024ea674a57",
+      "tidal": "https://tidal.com/album/474154918",
+      "soundcloud": "https://soundcloud.com/verksmidjan/sets/gaedablod-og-bestaskinn",
+      "youtube": "https://www.youtube.com/watch?v=WkxgbgUgvp8&list=OLAK5uy_m0hUFrverjwv1niN8uqSIi-owCAE3G3W0",
+      "discogs": "https://www.discogs.com/release/35501068-%C3%9Atik%C3%B6ttur-G%C3%A6%C3%B0abl%C3%B3%C3%B0-og-Bestaskinn"
+    },
+    "tracks": [
+      {
+        "title": "People Don't Change Much",
+        "soundcloud": "https://soundcloud.com/verksmidjan/people-dont-change-much"
+      },
+      {
+        "title": "All At Once",
+        "soundcloud": "https://soundcloud.com/verksmidjan/all-at-once"
+      },
+      {
+        "title": "Align A Line",
+        "soundcloud": "https://soundcloud.com/verksmidjan/align-a-line"
+      },
+      {
+        "title": "Goggi Mega",
+        "soundcloud": "https://soundcloud.com/verksmidjan/goggi-mega"
+      },
+      {
+        "title": "Ekki Segja Fra",
+        "soundcloud": "https://soundcloud.com/verksmidjan/ekki-segja-fra"
+      },
+      {
+        "title": "Eg Er Bara Hamingjusamur",
+        "soundcloud": "https://soundcloud.com/verksmidjan/eg-er-bara-hamingjusamur"
+      },
+      {
+        "title": "2 Dallah Biscuit",
+        "soundcloud": "https://soundcloud.com/verksmidjan/2-dallah-biscuit"
+      }
+    ]
+  },
+  {
+    "id": "VERK0002",
+    "artist": "Thiz.One",
+    "album": "Magicicadas EP",
+    "release": "2025-04-02",
+    "year": "2026",
+    "slugs": ["thizone", "magicicadas"],
+    "cover": "/covers/VERK0002.jpg",
+    "bandcampAlbumId": "2446517990",
+    "links": {
+      "bandcamp": "https://thizone.bandcamp.com/album/magicicadas-ep",
+      "apple": "",
+      "spotify": "",
+      "tidal": "",
+      "soundcloud": "https://soundcloud.com/verksmidjan/sets/magicicadas-ep",
+      "discogs": "https://www.discogs.com/release/36967980-ThizOne-Magicicadas-EP"
+    },
+    "tracks": [
+      {
+        "title": "Cicadas",
+        "soundcloud": "https://soundcloud.com/verksmidjan/cicadas"
+      },
+      {
+        "title": "Mental movement",
+        "soundcloud": "https://soundcloud.com/verksmidjan/mental-movement"
+      },
+      {
+        "title": "Propagandalf",
+        "soundcloud": "https://soundcloud.com/verksmidjan/propagandalf"
+      },
+      {
+        "title": "Physickz",
+        "soundcloud": "https://soundcloud.com/verksmidjan/physickz"
+      },
+      {
+        "title": "Breaking the beat",
+        "soundcloud": "https://soundcloud.com/verksmidjan/breaking-the-beat"
+      },
+      {
+        "title": "Beat break",
+        "soundcloud": "https://soundcloud.com/verksmidjan/beat-break"
+      },
+      {
+        "title": "Champion Walk",
+        "soundcloud": "https://soundcloud.com/verksmidjan/champion-walk"
+      }
+    ]
+  }
+]

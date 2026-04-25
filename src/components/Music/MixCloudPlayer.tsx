@@ -1,5 +1,3 @@
-import React from "react";
-
 const MixCloudPlayer = ({
   trackId,
   height = "120px",

@@ -7,11 +7,11 @@ export function SocialCollapsed() {
 }
 
 const socials = [
-  {
-    id: "telegram",
-    title: "Group Chat",
-    url: "https://t.me/verksmidjan",
-  },
+  // {
+  //   id: "telegram",
+  //   title: "Group Chat",
+  //   url: "https://t.me/verksmidjan",
+  // },
   {
     id: "instagram",
     title: "Instagram",

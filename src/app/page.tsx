@@ -1,18 +1,17 @@
 "use client";
 
-import { useState, useRef, ReactNode, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import styles from "./page.module.css";
-import Sidebar from "@/components/Sidebar";
-import { HeaderCollapsed, HeaderExpanded } from "@/components/Header";
 import {
   CollectiveCollapsed,
   CollectiveExpanded,
 } from "@/components/Collective";
-import { SocialCollapsed } from "@/components/Social";
-import { SocialExpanded } from "@/components/Social";
+import { HeaderCollapsed, HeaderExpanded } from "@/components/Header";
 import { MusicCollapsed, MusicExpanded } from "@/components/Music";
 import { ReleasesCollapsed, ReleasesExpanded } from "@/components/Releases";
+import Sidebar from "@/components/Sidebar";
+import { SocialCollapsed, SocialExpanded } from "@/components/Social";
+import { usePathname } from "next/navigation";
+import { ReactNode, useEffect, useRef, useState } from "react";
+import styles from "./page.module.css";
 
 interface RowProps {
   collapsedContent: ReactNode;
@@ -37,16 +36,13 @@ const Row = ({
       onClick={onExpand}
     >
       <div className={styles.rowContent}>
-        <div
-          ref={contentRef}
-          className={styles.expandedContent}
-          style={{ display: isExpanded ? "block" : "none" }}
-        >
-          {expandedContent}
-        </div>
-        <div style={{ display: isExpanded ? "none" : "block" }}>
-          {collapsedContent}
-        </div>
+        {isExpanded ? (
+          <div ref={contentRef} className={styles.expandedContent}>
+            {expandedContent}
+          </div>
+        ) : (
+          <div>{collapsedContent}</div>
+        )}
       </div>
     </div>
   );
