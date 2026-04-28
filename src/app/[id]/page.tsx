@@ -44,6 +44,19 @@ export function generateMetadata({
       openGraph: {
         title: `${release.artist} – ${release.album}`,
         description: `Listen to ${release.album} by ${release.artist}. Available on all major streaming platforms.`,
+        images: [
+          {
+            url: release.cover,
+            width: 1200,
+            height: 1200,
+            alt: `${release.artist} – ${release.album}`,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${release.artist} – ${release.album} | VERKSMIÐJAN`,
+        description: `Listen to ${release.album} by ${release.artist}. Available on all major streaming platforms.`,
         images: [release.cover],
       },
     };

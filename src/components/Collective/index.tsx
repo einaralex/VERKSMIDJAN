@@ -57,6 +57,25 @@ export function CollectiveExpanded() {
     <>
       <CollectiveCollapsed />
       <ExpandedWrap>
+        <div className={styles.about}>
+          <div className={styles.aboutCol}>
+            <span className={styles.lang}>EN</span>
+            <p>
+              Verksmiðjan is an Icelandic music collective and independent
+              record label based in Reykavík. We occasionally host events to
+              showcase the finest of Icelandic underground dance and techno
+              music.
+            </p>
+          </div>
+          <div className={styles.aboutCol}>
+            <span className={styles.lang}>IS</span>
+            <p>
+              Verksmiðjan er tónlistarsamsteypa og sjálfstæð plötuútgáfa. Við
+              höldum öðru hverju jaðartónlistarviðburði með áherslum á teknó og
+              danstónlist.
+            </p>
+          </div>
+        </div>
         <div className={styles.grid}>
           {members.map((member) => (
             <Card key={member.name} member={member} />
