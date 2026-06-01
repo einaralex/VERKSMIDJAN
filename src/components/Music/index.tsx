@@ -1,8 +1,7 @@
-import React from "react";
 import CollapsedWrap from "../Rows/CollapsedWrap";
 import ExpandedWrap from "../Rows/ExpandedWrap";
-import SoundCloudPlayer from "./SoundCloudPlayer";
 import MixCloudPlayer from "./MixCloudPlayer";
+import SoundCloudPlayer from "./SoundCloudPlayer";
 // import styles from "./music.module.css";
 
 export function MusicCollapsed() {
@@ -19,6 +18,7 @@ export function MusicExpanded() {
             loading="eager"
             trackId="VERKSMI%25C3%2590JAN%2F%25C3%25BAtik%25C3%25B6ttur-feat-innikisa-radar-191024%2F"
           />
+          <SoundCloudPlayer trackId="2115237273" />
           <SoundCloudPlayer loading="eager" trackId="1933581902" />
           <SoundCloudPlayer trackId="1933586435" />
           <SoundCloudPlayer trackId="1534646428" />

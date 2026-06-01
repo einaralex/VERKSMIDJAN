@@ -1,4 +1,5 @@
 .sidebar {
+    top: 0;
     width: 60px;
     color: black;
 
@@ -9,7 +10,7 @@
 
     border: 2px solid black;
     /* background-image: url("https://www.transparenttextures.com/patterns/black-felt.png"); */
-    
+
     /* border-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png") 8 round; */
 }
 
@@ -19,7 +20,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    
+
     justify-content: space-between;
 }
 
@@ -31,7 +32,6 @@
     margin-top: 1rem;
     background: none;
     border: none;
-
 }
 
 .cogwheelsContainer {
@@ -45,5 +45,4 @@
     margin-left: 10px;
 
     transform: scale(0.15);
-
-  }
+}

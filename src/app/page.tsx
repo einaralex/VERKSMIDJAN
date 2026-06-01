@@ -155,10 +155,50 @@ export default function Home() {
         isScrolling.current = false;
       }, SCROLL_THRESHOLD);
     };
+    let touchStartY = 0;
+
+    const moveRow = (direction: "up" | "down") => {
+      const currentContent = contentRefs.current[expandedRow];
+      if (!currentContent) return;
+
+      const { scrollTop, scrollHeight, clientHeight } = currentContent;
+      const isAtBottom = scrollHeight - scrollTop <= clientHeight + 1;
+      const isAtTop = scrollTop <= 0;
+
+      if (direction === "down" && isAtBottom) {
+        setExpandedRow((row) => Math.min(row + 1, ROWS - 1));
+      }
+
+      if (direction === "up" && isAtTop) {
+        setExpandedRow((row) => Math.max(row - 1, 0));
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      const touchEndY = e.changedTouches[0].clientY;
+      const deltaY = touchStartY - touchEndY;
+
+      if (Math.abs(deltaY) < 50) return;
+
+      if (deltaY > 0) {
+        moveRow("down");
+      } else {
+        moveRow("up");
+      }
+    };
+
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     window.addEventListener("wheel", handleWheel, { passive: false });
     return () => {
       window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [expandedRow]);
 
