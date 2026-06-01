@@ -1,20 +1,23 @@
-import { useEffect, useState } from "react";
-import styles from "./sidebar.module.css";
-import Cogwheels from "./Cogwheels";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import Cogwheels from "./Cogwheels";
+import styles from "./sidebar.module.css";
 
 export default function Sidebar() {
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // This code will only run on the client side
-    setAudio(new Audio("/909.mp3"));
+    audioRef.current = new Audio("/909.mp3");
+    audioRef.current.preload = "auto";
+    audioRef.current.load();
   }, []);
 
   const play = () => {
-    if (audio) {
-      audio.play();
-    }
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.currentTime = 0;
+    void audio.play();
   };
 
   return (
