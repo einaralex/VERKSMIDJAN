@@ -204,6 +204,13 @@ export default function Home() {
             contentRef={(el) => (contentRefs.current[4] = el)}
           />
         </div>
+        <div className={styles.crawlableContent}>
+          <HeaderExpanded />
+          <CollectiveExpanded />
+          <ReleasesExpanded />
+          <SocialExpanded />
+          <MusicExpanded />
+        </div>
       </main>
     </div>
   );

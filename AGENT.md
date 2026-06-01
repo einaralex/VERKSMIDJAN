@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENT.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Use codegraph to navigate project
 
 **Keep this file up to date.** When you make architectural changes, add new patterns, or change how data flows, update this file so future sessions have accurate context.
 
